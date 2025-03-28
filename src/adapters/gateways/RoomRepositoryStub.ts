@@ -1,5 +1,5 @@
 import { IRoomRepository } from '../../application/presenters/IRoomRepository';
-import { Room } from '../../application/entities/Room';
+import { Room } from '../../application/domain/Room';
 export class RoomRepositoryStub implements IRoomRepository {
   rooms = [
     new Room(1, 0, 101, 50),

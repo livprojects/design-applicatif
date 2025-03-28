@@ -1,13 +1,11 @@
-import { IRoomRepository } from '../presenters/IRoomRepository';
-import { Hotel } from '../entities/Hotel';
+import { IHotelRepository } from '../presenters/IHotelRepository';
 
 export class RoomSetterUseCase {
-  constructor(private readonly roomRepository: IRoomRepository) {}
+  constructor(private readonly hotelRepository: IHotelRepository) {}
 
   public execute() {
-    const chambres = this.roomRepository.getAllRooms();
-    const hotel = new Hotel(chambres);
+    const hotel = this.hotelRepository.getHotel();
     hotel.setAllRoomsPrices(100);
-    this.roomRepository.saveRooms(hotel.rooms);
+    this.hotelRepository.saveHotel(hotel);
   }
 }

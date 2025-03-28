@@ -1,6 +1,8 @@
 import { Room } from './Room';
 
 export class Hotel {
+  imgUrl!: string;
+
   constructor(public readonly rooms: Room[]) {}
 
   // en charge de la cohérence de lui-même et de ses enfants => agrégat

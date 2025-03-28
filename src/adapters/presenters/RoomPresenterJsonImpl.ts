@@ -1,4 +1,4 @@
-import { Room } from '../../application/entities/Room';
+import { Room } from '../../application/domain/Room';
 import { RoomPresenter } from '../../application/presenters/RoomPresenter';
 
 export class RoomPresenterJsonImpl implements RoomPresenter {
