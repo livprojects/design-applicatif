@@ -1,5 +1,5 @@
-import { RoomPresenter } from './RoomPresenter';
-import { Room } from '../Room';
+import { RoomPresenter } from '../../application/presenters/RoomPresenter';
+import { Room } from '../../application/entities/Room';
 
 export class RoomPresenterStringImpl implements RoomPresenter {
   rooms: string[] = [];

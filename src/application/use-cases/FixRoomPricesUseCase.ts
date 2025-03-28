@@ -1,5 +1,5 @@
 import { Hotel } from '../entities/hotel';
-import { IRoomRepository } from '..//IRoomRepository';
+import { IRoomRepository } from '../presenters/IRoomRepository';
 
 export class RoomSetterUseCase {
   constructor(private readonly roomRepository: IRoomRepository) {}

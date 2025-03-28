@@ -1,4 +1,4 @@
-import { IRoomRepository } from '../IRoomRepository';
+import { IRoomRepository } from '../presenters/IRoomRepository';
 import { RoomPresenter } from '../presenters/RoomPresenter';
 
 export class RoomRetrieverUseCase {
