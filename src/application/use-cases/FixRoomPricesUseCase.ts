@@ -1,6 +1,6 @@
 import { IHotelRepository } from '../presenters/IHotelRepository';
 
-export class RoomSetterUseCase {
+export class FixRoomPricesUseCase {
   constructor(private readonly hotelRepository: IHotelRepository) {}
 
   public execute() {

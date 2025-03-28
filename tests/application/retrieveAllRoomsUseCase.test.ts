@@ -1,4 +1,4 @@
-import { RoomRetrieverUseCase } from '../../src/application/use-cases/RetrieveAllRoomsUseCase';
+import { RetrieveAllRoomsUseCase } from '../../src/application/use-cases/RetrieveAllRoomsUseCase';
 import { RoomRepositoryStub } from '../../src/adapters/gateways/RoomRepositoryStub';
 import { RoomPresenterStringImpl } from '../../src/adapters/presenters/RoomPresenterStringImpl';
 import { RoomPresenterJsonImpl } from '../../src/adapters/presenters/RoomPresenterJsonImpl';
@@ -8,7 +8,7 @@ test('when the hotel has rooms, the manager can check the data of the rooms', ()
   // 8 rooms are in the hotel
   const roomRepositoryStub = new RoomRepositoryStub();
 
-  const roomRetriever = new RoomRetrieverUseCase(roomRepositoryStub);
+  const roomRetriever = new RetrieveAllRoomsUseCase(roomRepositoryStub);
   const presenter = new RoomPresenterStringImpl();
 
   // WHEN
@@ -28,7 +28,7 @@ test('when the hotel has rooms, the manager can check the data of the rooms, the
   // 8 rooms are in the hotel
   const roomRepositoryStub = new RoomRepositoryStub();
 
-  const roomRetriever = new RoomRetrieverUseCase(roomRepositoryStub);
+  const roomRetriever = new RetrieveAllRoomsUseCase(roomRepositoryStub);
   const presenter = new RoomPresenterJsonImpl();
 
   // WHEN

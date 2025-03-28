@@ -1,7 +1,7 @@
 import { IRoomRepository } from '../presenters/IRoomRepository';
 import { RoomPresenter } from '../presenters/RoomPresenter';
 
-export class RoomRetrieverUseCase {
+export class RetrieveAllRoomsUseCase {
   constructor(private readonly roomRepository: IRoomRepository) {}
 
   public execute(roomPresenter: RoomPresenter) {
