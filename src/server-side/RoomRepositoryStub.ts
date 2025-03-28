@@ -1,6 +1,5 @@
-import { IRoomRepository } from '../hexagon/IRoomRepository';
-import { Room } from '../hexagon/Room';
-
+import { IRoomRepository } from '../application/IRoomRepository';
+import { Room } from '../application/Room';
 export class RoomRepositoryStub implements IRoomRepository {
   rooms = [
     new Room(1, 0, 101, 50),

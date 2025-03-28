@@ -1,16 +1,11 @@
-import { IRoomRepository } from './IRoomRepository';
-import { Room } from './Room';
+import { RoomPresenter } from '../presenters/RoomPresenter';
+import { Room } from '../Room';
 
 export class Hotel {
-  constructor(private readonly roomRepository: IRoomRepository) {}
-
-  public getAllRooms(): Room[] {
-    return this.roomRepository.getAllRooms();
-  }
+  constructor(public readonly rooms: Room[]) {}
 
   public setAllRoomsPrices(groundFloorPrice: number) {
-    const rooms = this.getAllRooms();
-    rooms.forEach((room) => {
+    this.rooms.forEach((room) => {
       if (room.floor === 0) {
         room.price = groundFloorPrice;
       } else if (room.floor === 1) {
@@ -24,8 +19,6 @@ export class Hotel {
       if (room.price > 200) {
         room.price = 200;
       }
-
-      this.roomRepository.saveRooms(rooms);
     });
   }
 }

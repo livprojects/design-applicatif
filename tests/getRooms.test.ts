@@ -1,5 +1,4 @@
-import { Hotel } from '../src/hexagon/hotel';
-import { Room } from '../src/hexagon/Room';
+import { Hotel } from '../src/application/entities/hotel';
 
 // test('when  my hotel has no room, get all rooms should return an empy list', () => {
 //  // GIVEN
