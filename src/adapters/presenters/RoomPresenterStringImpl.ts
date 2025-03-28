@@ -6,7 +6,7 @@ export class RoomPresenterStringImpl implements RoomPresenter {
 
   execute(rooms: Room[]): void {
     rooms.map((room) => {
-      return this.rooms.push(`Room ${room.number} - ${room.price}€`);
+      return this.rooms.push(`Room ${room.number} - ${room.price.value()}€`);
     });
   }
 
