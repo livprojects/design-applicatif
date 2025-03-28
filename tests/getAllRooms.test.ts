@@ -1,24 +1,22 @@
 import { RoomRetrieverUseCase } from '../src/application/use-cases/RoomRetrieverUseCase';
 import { RoomRepositoryStub } from '../src/server-side/RoomRepositoryStub';
 import { RoomPresenterImpl } from '../src/application/presenters/RoomPresenterImpl';
-test('récupérer les chambres au bon format', () => {
+
+test('when the hotel has 8 rooms, the manager can retrieve 8 rooms', () => {
   // GIVEN
+  // 8 rooms are in the hotel
   const roomRepositoryStub = new RoomRepositoryStub();
 
   const roomRetriever = new RoomRetrieverUseCase(roomRepositoryStub);
-  const rooms = roomRetriever.execute();
   const presenter = new RoomPresenterImpl();
-  presenter.hydrateRooms(rooms);
+
+  // WHEN
+  // the manager checks all rooms
+
+  roomRetriever.execute(presenter);
   const roomsOutput = presenter.presenter();
 
-  // my hotel has 8 rooms
-  // const roomRepositoryStub = new RoomRepositoryStub();
-  // const rooms = roomRepositoryStub.getAllRooms();
-  // const hotel = new Hotel(roomRepositoryStub);
-  // // WHEN
-  // // get All rooms
-  // const roomsRetrieved = hotel.getAllRooms();
-  // // THEN
-  // // empty list
-  // expect(roomsRetrieved).toEqual(rooms);
+  //THEN
+  // 8 rooms are retrieved
+  expect(roomsOutput.length).toEqual(8);
 });
